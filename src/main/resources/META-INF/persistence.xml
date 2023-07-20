@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+                                 http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+             version="2.2">
+    <persistence-unit name="myPersistenceUnit" transaction-type="RESOURCE_LOCAL">
+        <!-- Provider (Hibernate) -->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <!-- Entity classes -->
+        <class>com.example.jpahibernate.model.Student</class>
+
+        <!-- Database connection properties -->
+        <properties>
+            <property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/hibernatedb"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            <property name="hibernate.connection.username" value="root"/>
+            <property name="hibernate.connection.password" value="2042001"/>
+
+
+            <!-- Other Hibernate settings -->
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="create" />
+
+<!--            <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>-->
+<!--            <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernatedb</property>-->
+<!--            <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>-->
+<!--            <property name="hibernate.connection.username">root</property>-->
+<!--            <property name="hibernate.connection.password">2042001</property>-->
+<!--            <property name="hibernate.show_sql">true</property>-->
+<!--            <property name="hibernate.hbm2ddl.auto">update</property>-->
+        </properties>
+    </persistence-unit>
+</persistence>
